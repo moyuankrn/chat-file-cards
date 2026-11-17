@@ -1,0 +1,47 @@
+/* File cards extracted from the Xiaoke panel. Override these variables to theme them. */
+:root { --bg:#f6f8f8; --glass-solid:#fff; --ink:#172324; --ink-2:#496062; --muted:#6e8082; --hair:rgba(20,45,45,.1); --soft:rgba(20,45,45,.055); --mint:#68baa6; --sky:#6ba5d5; --rose:#d58478; --bad:#c8534d; font-family:system-ui,sans-serif; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); }
+button, input, textarea { font:inherit; }
+[hidden] { display:none !important; }
+.chat-file { display: flex; flex-direction: column; width: 100%; min-width: 0; overflow: hidden; border: 1px solid var(--hair); border-radius: 17px; background: var(--glass-solid); color: var(--ink); box-shadow: 0 3px 12px -7px #25433b25; text-align: left; }
+.chat-file.me { background: color-mix(in srgb, var(--mint) 10%, var(--glass-solid)); border-top-right-radius: 6px; }
+.chat-file.them { border-top-left-radius: 6px; }
+.chat-file-main { display: flex; align-items: center; gap: 12px; padding: 16px 14px 14px; min-width: 0; }
+.chat-file-icon { display: flex; flex: 0 0 46px; flex-direction: column; align-items: center; justify-content: center; gap: 2px; height: 57px; border-radius: 11px; background: color-mix(in srgb, var(--sky) 13%, transparent); color: var(--ink-2); }
+.chat-file-icon[data-type="pdf"] { background: color-mix(in srgb, var(--rose) 16%, transparent); }
+.chat-file-icon > svg { width: 25px; height: 25px; }
+.chat-file-icon > span { font: 600 9px/1.4 system-ui, sans-serif; letter-spacing: .5px; }
+.chat-file-body { display: flex; flex: 1; min-width: 0; flex-direction: column; gap: 5px; }
+.chat-file-body b { font-size: 14px; font-weight: 600; line-height: 1.55; overflow-wrap: anywhere; }
+.chat-file-body small { font-size: 11px; line-height: 1.5; color: var(--ink-2); opacity: .75; }
+.chat-file-actions { display: flex; gap: 8px; align-items: center; padding: 0 12px 12px; }
+.chat-file-actions > button, .chat-file-actions > a { display: inline-flex; flex: 1; align-items: center; justify-content: center; gap: 6px; min-height: 40px; padding: 7px 10px; border-radius: 10px; font: inherit; font-size: 12px; line-height: 1.4; text-decoration: none; cursor: pointer; transition: background .15s; }
+.chat-file-actions > button { color: var(--ink-2); background: var(--soft); }
+.chat-file-actions > a { color: var(--ink); background: color-mix(in srgb, var(--mint) 18%, transparent); }
+.chat-file-actions > a svg { width: 15px; height: 15px; flex: none; }
+.chat-file-actions > a:hover { background: color-mix(in srgb, var(--mint) 27%, transparent); }
+.chat-file-actions > a[aria-disabled="true"] { opacity: .6; cursor: progress; }
+.chat-file-actions :focus-visible, .file-preview :focus-visible { outline: 2px solid var(--mint); outline-offset: 3px; }
+.chat-file-hint { flex: 1; padding-left: 2px; font-size: 11px; color: var(--ink-2); }
+.chat-file-status { display: block; padding: 9px 13px 11px; border-top: 1px solid var(--hair); color: var(--ink-2); font-size: 11px; line-height: 1.6; overflow-wrap: anywhere; }
+.chat-file-status[hidden] { display: none; }
+.chat-file[data-state="error"] .chat-file-status { color: var(--bad); }
+.chat-file[data-state="loading"] .chat-file-status { background: color-mix(in srgb, var(--mint) 6%, transparent); }
+.chat-file-caption { display: block; padding: 7px 5px 2px; white-space: pre-wrap; }
+.file-preview { width: min(920px, calc(100vw - 24px)); height: min(820px, calc(100dvh - 24px)); max-width: none; max-height: none; margin: auto; padding: 0; border: 1px solid var(--hair); border-radius: 24px; background: var(--bg); color: var(--ink); box-shadow: 0 24px 80px #0003; overflow: hidden; }
+.file-preview[open] { display: flex; flex-direction: column; }
+.file-preview::backdrop { background: #12201c88; backdrop-filter: blur(8px); }
+.file-preview-head { display: flex; gap: 16px; align-items: center; padding: 15px 20px; border-bottom: 1px solid var(--hair); background: var(--glass-solid); }
+.file-preview-head > div { min-width: 0; flex: 1; }
+.file-preview-head small { display: block; color: var(--muted); font-size: 11px; margin-bottom: 3px; letter-spacing: .08em; }
+.file-preview-head b { display: block; font-size: 14px; overflow-wrap: anywhere; max-height: 66px; overflow: auto; }
+.file-preview-head button { width: 40px; height: 40px; flex: none; background: var(--soft); border-radius: 50%; color: var(--ink); font-size: 24px; }
+.file-preview-stage { flex: 1; min-height: 0; overflow: auto; padding: 20px; font-size: 14px; background: color-mix(in srgb, var(--soft) 48%, var(--bg)); }
+.file-preview-stage pre { width: min(100%, 720px); min-height: 100%; margin: 0 auto; padding: 28px; border: 1px solid var(--hair); border-radius: 14px; background: var(--glass-solid); box-shadow: 0 8px 30px #0000000b; white-space: pre-wrap; overflow-wrap: anywhere; font: 13px/1.8 ui-monospace, monospace; }
+.file-preview-stage iframe { display: block; width: 100%; height: 100%; border: 0; border-radius: 12px; background: white; }
+.file-preview-stage img, .file-preview-stage video { display: block; max-width: 100%; max-height: 100%; margin: auto; object-fit: contain; border-radius: 10px; }
+.file-preview-stage audio { display: block; width: 100%; margin: 30px auto; }
+.file-preview-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; justify-content: space-between; padding: 10px 20px; border-top: 1px solid var(--hair); background: var(--glass-solid); font-size: 11px; color: var(--ink-2); }
+.file-preview-foot a { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; padding: 0 14px; border-radius: 999px; background: color-mix(in srgb, var(--mint) 17%, transparent); color: var(--ink); font-size: 12px; text-decoration: none; }
+@media (max-width: 600px) { .file-preview { width: 100vw; height: 100dvh; max-width: 100vw; max-height: 100dvh; border: 0; border-radius: 0; } .file-preview-head { padding-top: calc(env(safe-area-inset-top) + 12px); } .file-preview-stage { padding: 10px; } .file-preview-stage pre { padding: 18px; } .file-preview-foot { padding-bottom: calc(env(safe-area-inset-bottom) + 10px); } }
